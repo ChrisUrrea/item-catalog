@@ -1,0 +1,27 @@
+<html>
+<head>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='main.css') }}">
+	</head>
+
+<body>
+{% include "header.html" %}
+{% include "message.html" %}
+
+<h1> Edit: {{pawnshop.name}}<br>ID: {{pawnshop.id}} </h1>
+
+<div class="pane">
+
+<form action="{{ url_for('editPawnShop',pawnshop_id = pawnshop.id)}}" method = 'post'>
+
+	<p>Name:</p>
+		<input type ='text' size='30' name='name' placeholder = '{{pawnshop.name}}' required>
+
+<input type='submit' value='Edit'>
+
+	<p><a href = '{{url_for("showPawnShops")}}'> Cancel </a></p>
+
+</form>
+</div>
+</body>
+
+</html>
